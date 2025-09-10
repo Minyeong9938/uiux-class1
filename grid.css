@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    border: 1px solid #000;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.item1,
+.item6 {
+    background-color: rgb(255, 211, 219);
+}
+
+.item2,
+.item7 {
+    background-color: rgb(255, 249, 195);
+}
+
+.item3,
+.item8 {
+    background-color: rgb(178, 255, 178);
+}
+
+.item4,
+.item9 {
+    background-color: rgb(194, 238, 255);
+}
+
+.item5,
+.item10 {
+    background-color: rgb(255, 175, 255);
+}
+
+.container {
+    display: grid;
+
+    /* background-color: #000; */
+    /* justify-content: space-around; */
+    /* padding: 80px; */
+    /* gap: 20px; */
+    /* grid-template-columns: 70px 70px 70px; */
+
+    /* grid-template-columns: 300px 300px 300px 300px; */
+    /* grid-template-columns: repeat(4, 300px); */
+
+
+    /* grid-template-columns: 150px repeat(2, 300px) 200px; */
+
+
+    /* grid-template-rows: 100px 200px 150px; */
+    /* grid-template-rows: repeat(3, 150px); */
+
+
+    /* grid-template-columns: 20% 30% 40%; */
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: 1fr 2fr 1fr 2fr; */
+
+
+    /* 행이 몇개 만들어질지 모르지만 전체적으로 자동으로 행 높이를 지정해주고 싶은 경우 grid-auto-rows 사용 */
+    grid-auto-rows: 100px;
+
+
+    /* column-gap: 20px;
+    row-gap: 30px; */
+    grid-gap: 30px 20px;
+    /* row-gap column-gap*/
+}
+
+.item1 {
+    /* grid-column-start: 1;
+    grid-column-end: 3;
+
+    grid-row-start: 1;
+    grid-row-end: 3; */
+
+    /* grid-column: 1 / 3;
+    grid-row: 1 / 3; */
+
+    /* grid-column: 2 / span 2; */
+    /* grid-row: 1 / span 3; */
+
+    /* 마지막 컬럼까지 지정 시 -1 */
+    /* grid-column: 2 / -1; */
+
+    /* grid-area: row-start / colimn-start, row-end / column-end; */
+    grid-area: 1 / 2 / 3 / 4;
+}
+
+/* .item2 {
+    grid-area: 3/ 2 / 5 / 3;
+}
+
+.item3 {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.item4 {
+    grid-area: 1 / 4 / 3 / 5;
+}
+
+.item6 {
+    grid-area: 3 / 3 / 5 / 5
+}
+
+.item9 {
+    grid-area: 5 / 2 / 6 / 4;
+} */
+
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-container {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-auto-rows: 250px;
+    grid-gap: 10px;
+
+    grid-template-areas:
+        "image2 image2 image2"
+        "image1 image7 image7"
+        "image1 image4 image6"
+        "image3 image5 image6";
+}
+
+.image1 {
+    grid-area: image1;
+}
+
+.image2 {
+    grid-area: image2;
+}
+
+.image3 {
+    grid-area: image3;
+}
+
+.image4 {
+    grid-area: image4;
+}
+
+.image5 {
+    grid-area: image5;
+}
+
+.image6 {
+    grid-area: image6;
+}
+
+.image7 {
+    grid-area: image7;
+}
+
+@media (max-width: 1024px) {
+    .img-container {
+        grid-template-areas:
+            "image2 image2"
+            "image1 image7"
+            "image1 image4"
+            "image5 image6"
+            "image3 image6";
+    }
+}
+
+@media (max-width: 768px) {
+    .img-container {
+        grid-template-areas:
+            "image2"
+            "image1"
+            "image7"
+            "image4"
+            "image5"
+            "image6"
+            "image3"
+        ;
+
+        grid-auto-rows: auto;
+    }
+}
