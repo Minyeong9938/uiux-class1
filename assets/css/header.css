@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     width: 100%;
     max-width: 1100px;
@@ -27,7 +31,7 @@
 }
 
 .sec04 {
-    background-color: khaki;
+    background-color: rgb(187, 201, 112);
 }
 
 /* header 영역 */
